@@ -1,0 +1,135 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "refsearch",
+  "title": "レファレンス協同データベース",
+  "description": "国立国会図書館レファレンス協同データベースのAPI 2.0で、レファレンス事例・調べ方マニュアル・特別コレクション・参加館を検索します。",
+  "icon": "extension-icon.png",
+  "author": "kdmsnr",
+  "license": "MIT",
+  "platforms": [
+    "macOS"
+  ],
+  "categories": [
+    "Productivity"
+  ],
+  "keywords": [
+    "レファ協",
+    "図書館",
+    "ndl",
+    "crd",
+    "reference",
+    "refsearch"
+  ],
+  "commands": [
+    {
+      "name": "search",
+      "title": "レファ協を検索",
+      "keywords": [
+        "refsearch",
+        "crd",
+        "ndl",
+        "レファ協"
+      ],
+      "subtitle": "レファレンス協同データベース",
+      "description": "キーワードから質問と回答、調べ方、コレクション、図書館を探します。",
+      "mode": "view",
+      "arguments": [
+        {
+          "name": "query",
+          "type": "text",
+          "placeholder": "検索キーワード",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "advanced-search",
+      "title": "レファ協を条件検索",
+      "keywords": [
+        "refsearch",
+        "crd",
+        "ndl",
+        "advanced",
+        "条件検索"
+      ],
+      "subtitle": "レファレンス協同データベース",
+      "description": "質問・回答・提供館などをフォームで指定し、複数の条件を組み合わせて検索します。",
+      "mode": "view"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "matchMode",
+      "type": "dropdown",
+      "title": "キーワードの一致条件",
+      "description": "スペース区切りの複数語をどう検索するか指定します。",
+      "required": false,
+      "default": "all",
+      "data": [
+        {
+          "title": "すべての語を含む（AND）",
+          "value": "all"
+        },
+        {
+          "title": "いずれかの語を含む（OR）",
+          "value": "any"
+        },
+        {
+          "title": "フレーズ一致",
+          "value": "phrase"
+        }
+      ]
+    },
+    {
+      "name": "sort",
+      "type": "dropdown",
+      "title": "並び順",
+      "description": "検索結果の並び順を指定します。",
+      "required": false,
+      "default": "fit",
+      "data": [
+        {
+          "title": "適合度が高い順",
+          "value": "fit"
+        },
+        {
+          "title": "更新が新しい順",
+          "value": "lst-date"
+        },
+        {
+          "title": "登録が新しい順",
+          "value": "reg-date"
+        },
+        {
+          "title": "アクセス数が多い順",
+          "value": "access-num"
+        }
+      ]
+    }
+  ],
+  "scripts": {
+    "build": "ray build -e dist -o dist --exit-on-error",
+    "dev": "ray develop",
+    "lint": "eslint src tests scripts --max-warnings 0 && prettier --check .",
+    "lint:store": "ray lint --exit-on-error",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "test:api": "node --import tsx scripts/check-api.ts",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "dependencies": {
+    "@raycast/api": "^2.3.0",
+    "@raycast/utils": "^2.3.1",
+    "fast-xml-parser": "^5.11.1"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^2.2.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "eslint": "^9.0.0",
+    "prettier": "^3.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.9.0"
+  }
+}

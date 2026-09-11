@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Synthetic data following the API 2.0 XML format. -->
+<result_set>
+  <hit_num>4</hit_num>
+  <results_get_position>1</results_get_position>
+  <results_num>4</results_num>
+  <results_cd>0</results_cd>
+  <result>
+    <reference>
+      <question>本 &amp; 読書について知りたい</question>
+      <answer><![CDATA[最初の回答。
+次の行には <資料名> を記載。]]></answer>
+      <keyword>本</keyword>
+      <keyword>読書</keyword>
+      <class type="NDC" version="10">019</class>
+      <class type="NDC">913.6</class>
+      <bibl><bibl-desc>架空の参考図書</bibl-desc><bibl-isbn>0000000000001</bibl-isbn><bibl-note>p. 1</bibl-note></bibl>
+      <bibl><bibl-desc>別の参考図書</bibl-desc></bibl>
+      <ans-proc>蔵書を調査。</ans-proc>
+      <system><sys-id>0001</sys-id><lib-id>001</lib-id><lib-name>テスト図書館</lib-name><lst-date>20260911123000</lst-date></system>
+      <url>https://crd.ndl.go.jp/reference/detail?page=ref_view&amp;id=0001</url>
+    </reference>
+  </result>
+  <result>
+    <manual>
+      <theme>新聞の調べ方</theme><guide>索引を使う。</guide><keyword>新聞</keyword><class type="NDC">070</class>
+      <system><sys-id>0002</sys-id><lib-name>テスト県立図書館</lib-name><lst-date>00000000</lst-date></system>
+      <url>https://crd.ndl.go.jp/reference/detail?page=man_view&amp;id=0002</url>
+    </manual>
+  </result>
+  <result>
+    <collection>
+      <col-name>郷土文庫</col-name><outline>地域の資料。</outline><restriction>館内閲覧。</restriction>
+      <system><sys-id>0003</sys-id><lib-name>テスト市立図書館</lib-name></system>
+      <url>https://crd.ndl.go.jp/reference/detail?page=col_view&amp;id=0003</url>
+    </collection>
+  </result>
+  <result>
+    <profile>
+      <lib-name>テスト大学図書館</lib-name><feature>専門書を所蔵。</feature>
+      <add-pref>東京都</add-pref><add-city>架空区</add-city><add-street>1-2-3</add-street>
+      <system><lib-id>0004</lib-id><lst-date>20260101000000</lst-date></system>
+      <url>https://crd.ndl.go.jp/reference/detail?page=pro_view&amp;id=0004</url>
+    </profile>
+  </result>
+</result_set>
