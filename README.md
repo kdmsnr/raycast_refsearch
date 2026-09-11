@@ -4,20 +4,24 @@
 
 ## 導入
 
-macOS・Raycast・Node.js 22.14以降が必要です。このリポジトリで実行します。
+macOS・Raycast・Node.js 22.22.2以降が必要です。
+リポジトリを取得し、依存パッケージのインストールとビルドを行います。
 
 ```sh
+git clone https://github.com/kdmsnr/raycast_refsearch.git
+cd raycast_refsearch
 npm ci
-npm run dev
+npm run build
 ```
 
-Raycastで`refsearch`と検索してください。読み込み後はCtrl+Cで終了しても使えます。
-変更を反映するには`npm run dev`を再実行します。
+1. Raycastで **Import Extension** コマンドを開きます。
+2. 取得した `raycast_refsearch` ディレクトリ（`package.json` があるディレクトリ）を指定します。
+3. Raycastで **refsearch** または **refsearch-adv** を開きます。
 
 ## 使い方
 
-- **レファ協を検索**：キーワードで検索。初期設定はAND検索・適合度順。
-- **レファ協を条件検索**：質問・回答・提供館などを指定し、⌘Enterで検索。たとえば「質問：本」「回答：村上春樹」を入力すると、両方を満たす事例を探します。
+- **refsearch**：キーワードで検索。初期設定はAND検索・適合度順。
+- **refsearch-adv**：質問・回答・提供館などを指定し、⌘Enterで検索。たとえば「質問：本」「回答：村上春樹」を入力すると、両方を満たす事例を探します。
 
 レファレンス事例・調べ方マニュアル・特別コレクション・参加館に対応。結果をプレビューし、末尾で50件ずつ追加取得します。
 
@@ -33,6 +37,7 @@ Raycastで`refsearch`と検索してください。読み込み後はCtrl+Cで�
 ## 開発
 
 ```sh
+npm run dev       # 開発モードで読み込み、変更を反映
 npm test          # オフラインテスト
 npm run lint      # コード・書式の確認
 npm run build     # ビルドのみ

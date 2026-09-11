@@ -23,7 +23,7 @@
   "commands": [
     {
       "name": "search",
-      "title": "レファ協を検索",
+      "title": "refsearch",
       "keywords": [
         "refsearch",
         "crd",
@@ -44,7 +44,7 @@
     },
     {
       "name": "advanced-search",
-      "title": "レファ協を条件検索",
+      "title": "refsearch-adv",
       "keywords": [
         "refsearch",
         "crd",
