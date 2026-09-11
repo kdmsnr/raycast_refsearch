@@ -16,7 +16,7 @@ npm run build
 
 1. Raycastで **Import Extension** コマンドを開きます。
 2. 取得した `raycast_refsearch` ディレクトリ（`package.json` があるディレクトリ）を指定します。
-3. Raycastで **レファ協を検索** または **レファ協を条件検索** を開きます。
+3. Raycastで `refsearch` と検索し、候補に出る **レファ協を検索** または **レファ協を条件検索** を開きます。
 
 ## 使い方
 
