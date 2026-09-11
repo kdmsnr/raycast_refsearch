@@ -23,6 +23,7 @@ import {
   describeCriteria,
   type DataType,
   type SearchCriteria,
+  type Sort,
 } from "../lib/query";
 import { SearchForm } from "./search-form";
 
@@ -105,6 +106,22 @@ export function SearchResults({ initialCriteria }: { initialCriteria: SearchCrit
         ) : null}
         {!fullDetail ? (
           <ActionPanel.Section>
+            <ActionPanel.Submenu
+              title={`並び順: ${SORTS[criteria.sort]}`}
+              icon={Icon.ArrowDown}
+              shortcut={Keyboard.Shortcut.Common.Save}
+            >
+              {(Object.entries(SORTS) as [Sort, string][]).map(([sort, title]) => (
+                <Action
+                  key={sort}
+                  title={title}
+                  icon={criteria.sort === sort ? Icon.Checkmark : undefined}
+                  onAction={() =>
+                    setCriteria((previous) => (previous.sort === sort ? previous : { ...previous, sort }))
+                  }
+                />
+              ))}
+            </ActionPanel.Submenu>
             <Action
               title="検索条件を編集"
               icon={Icon.Pencil}
