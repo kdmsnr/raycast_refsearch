@@ -44,8 +44,6 @@ npm run build     # ビルドのみ
 npm run test:api  # 実APIの疎通確認
 ```
 
-UIテストは実行せず、IME・入力ソースは変更しません。
-
 ## 利用条件
 
 APIは非営利目的で利用できます。各データの著作権は原則として提供館に帰属します。[提供元の利用条件](https://crd.ndl.go.jp/jp/help/general/help_07.html)に従ってください。ソースコードはMITライセンスです。
